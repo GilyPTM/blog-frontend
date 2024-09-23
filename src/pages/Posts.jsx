@@ -62,7 +62,7 @@ export default function Posts() {
                   <a href="#!">
                     <img
                       className="card-img-top"
-                      src={`http://localhost:3002/uploads/${data.poza}`}
+                      src={`${configData.API_BASE_URL}/uploads/${data.poza}`}
                       alt="..."
                     />
                   </a>

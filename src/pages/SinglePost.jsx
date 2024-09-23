@@ -28,7 +28,7 @@ export default function SinglePost() {
           <a href="#!">
             <img
               className="card-img-top"
-              src={`http://localhost:3002/uploads/${post.poza}`}
+              src={`${configData.API_BASE_URL}/uploads/${post.poza}`}
               alt="..."
             />
           </a>

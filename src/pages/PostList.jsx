@@ -30,7 +30,7 @@ const PostList = () => {
   // Funcția de ștergere a unui articol
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3002/posts/delete/${id}`);
+      await axios.delete(`${configData.API_BASE_URL}/posts/delete/${id}`);
       setPosts(posts.filter((post) => post.id !== id));
     } catch (error) {
       setError("Eroare la ștergerea articolului.");
