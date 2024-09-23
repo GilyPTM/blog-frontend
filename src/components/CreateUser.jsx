@@ -20,7 +20,7 @@ const CreateUser = () => {
   // onSubmit handler
   const onSubmit = (userObject) => {
     axios
-      .post(configData.SERVER_URL, userObject)
+      .post(configData.API_BASE_URL + "/users/", userObject)
       .then((res) => {
         if (res.status === 200) {
           alert("User successfully created");

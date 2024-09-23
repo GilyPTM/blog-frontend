@@ -35,7 +35,7 @@ export default function Home() {
   useEffect(() => {
     console.log("primesc datele");
     axios
-      .get(configData.SERVER_POST_URL + "last3")
+      .get(configData.API_BASE_URL + "/posts/" + "last3")
       .then(({ data }) => {
         console.log(data["data"]);
         const updatedData = replaceHtmlTagsRecursive(data["data"]);
@@ -44,7 +44,7 @@ export default function Home() {
       .catch((error) => {
         console.log(error);
       });
-  },[]);
+  }, []);
 
   return (
     <>

@@ -12,7 +12,7 @@ const CommentSection = ({ postId }) => {
   const fetchComments = async (postId) => {
     try {
       const response = await axios.get(
-        `${configData.SERVER_COMMENT_URL}/${postId}`
+        `${configData.API_BASE_URL}/comments/${postId}`
       );
       setComments(response.data["data"]);
       setLoading(false);
@@ -35,7 +35,7 @@ const CommentSection = ({ postId }) => {
     var user = JSON.parse(localStorage.getItem("user"));
     console.log(user);
     try {
-      await axios.post(`${configData.SERVER_COMMENT_URL}`, {
+      await axios.post(`${configData.API_BASE_URL}/comments/`, {
         user_id: user.id, // Înlocuiți cu ID-ul utilizatorului autentificat
         text: newComment,
         post_id: postId,

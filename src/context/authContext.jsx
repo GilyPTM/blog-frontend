@@ -12,7 +12,10 @@ export const AuthContexProvider = ({ children }) => {
   );
 
   const login = async (inputs) => {
-    const res = await axios.post(configData.SERVER_URL + "veifyLogin", inputs);
+    const res = await axios.post(
+      configData.API_BASE_URL + "/users/" + "veifyLogin",
+      inputs
+    );
     setCurrentUser(res.data);
     localStorage.setItem("user", JSON.stringify(currentUser));
     setauthenticated(true);
@@ -21,7 +24,9 @@ export const AuthContexProvider = ({ children }) => {
 
   const logout = async (inputs) => {
     alert("doriti sa va delogati?");
-    const res = await axios.post(configData.SERVER_URL + "logout");
+    const res = await axios.post(
+      configData.API_BASE_URL + "/users/" + "logout"
+    );
     setauthenticated(false);
     localStorage.setItem("authenticated", false);
     setCurrentUser(null);

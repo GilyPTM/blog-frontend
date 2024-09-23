@@ -52,7 +52,7 @@ export default function CreatePost() {
   useEffect(() => {
     console.log("primesc datele");
     axios
-      .get(configData.SERVER_POST_URL + "categories")
+      .get(configData.API_BASE_URL + "/posts/" + "categories")
       .then(({ data }) => {
         console.log(data["data"]);
         setSelectCategories(data["data"]);
@@ -85,7 +85,7 @@ export default function CreatePost() {
     // Perform registration logic here, e.g., send form data to server
 
     axios
-      .post(configData.SERVER_POST_URL, formData, {
+      .post(configData.API_BASE_URL + "/posts/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

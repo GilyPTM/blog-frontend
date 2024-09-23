@@ -12,7 +12,7 @@ const PostList = () => {
   // Funcția de încărcare a articolelor de la API
   const fetchPosts = async () => {
     try {
-      const response = await axios.get(configData.SERVER_POST_URL);
+      const response = await axios.get(configData.API_BASE_URL + "/posts/");
       setPosts(response.data["data"]);
       setLoading(false);
       console.log(response.data);

@@ -9,7 +9,7 @@ const UserList = () => {
   useEffect(() => {
     console.log("primesc datele");
     axios
-      .get(configData.SERVER_URL)
+      .get(configData.API_BASE_URL + "/users/")
       .then(({ data }) => {
         setUsers(data["users"]);
       })

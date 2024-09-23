@@ -22,7 +22,7 @@ const ContactPage = () => {
   // Handler pentru trimiterea formularului
   const handleSubmit = (userObject) => {
     axios
-      .post(configData.SERVER_CONTACT_URL, userObject)
+      .post(configData.API_BASE_URL + "/contact/", userObject)
       .then((res) => {
         if (res.status === 200) {
           alert("User successfully created");

@@ -35,7 +35,7 @@ export default function Posts() {
   useEffect(() => {
     console.log("primesc datele");
     axios
-      .get(configData.SERVER_POST_URL)
+      .get(configData.API_BASE_URL + "/posts/")
       .then(({ data }) => {
         console.log(data["data"]);
         const updatedData = replaceHtmlTagsRecursive(data["data"]);

@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../Login.css";
 
-import { useNavigate, Link,Navigate } from "react-router-dom";
+import { useNavigate, Link, Navigate } from "react-router-dom";
 
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
@@ -50,12 +50,12 @@ export default function Register() {
     delete formData.confirm_password;
     console.log(formData);
     axios
-      .post(configData.SERVER_URL, formData)
+      .post(configData.API_BASE_URL + "/users/", formData)
       .then((res) => {
         if (res.status === 200) {
           alert("User successfully created");
           console.log(res.message);
-          
+
           navigate("/mylogin");
         } else Promise.reject();
       })
@@ -65,12 +65,11 @@ export default function Register() {
       });
     // setFormData(values => ({}))
   };
-  console.log('authenticated', authenticated);
+  console.log("authenticated", authenticated);
   if (authenticated) {
     // Redirect
     alert(1234);
     return <Navigate replace to="/posts" />;
-    
   } else {
     return (
       <section className="ftco-section">

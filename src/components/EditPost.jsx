@@ -53,7 +53,7 @@ export default function EditPost() {
   useEffect(() => {
     // Preluăm categoriile disponibile
     axios
-      .get(configData.SERVER_POST_URL + "categories")
+      .get(configData.API_BASE_URL + "/posts/" + "categories")
       .then(({ data }) => {
         setSelectCategories(data["data"]);
       })
@@ -63,7 +63,7 @@ export default function EditPost() {
 
     // Preluăm datele articolului pentru a-l edita
     axios
-      .get(`${configData.SERVER_POST_URL}${id}`)
+      .get(`${configData.API_BASE_URL + "/posts/"}${id}`)
       .then(({ data }) => {
         setInfoData(data["data"]);
         setContinut({ value: data["data"].continut });
@@ -98,7 +98,7 @@ export default function EditPost() {
     }
 
     axios
-      .put(`${configData.SERVER_POST_URL}${id}`, formData, {
+      .put(`${configData.API_BASE_URL}/posts/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

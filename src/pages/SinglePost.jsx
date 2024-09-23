@@ -9,7 +9,7 @@ export default function SinglePost() {
   useEffect(() => {
     console.log(id);
     axios
-      .get(configData.SERVER_POST_URL + id)
+      .get(configData.API_BASE_URL + "/posts/" + id)
       .then(({ data }) => {
         console.log(data);
 

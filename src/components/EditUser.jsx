@@ -22,7 +22,7 @@ const EditUser = (props) => {
   const onSubmit = (userObject) => {
     console.log(userObject);
     axios
-      .put(configData.SERVER_URL + id, userObject)
+      .put(configData.API_BASE_URL + "/users/" + id, userObject)
       .then((res) => {
         if (res.status === 200) {
           alert("User successfully updated");
@@ -35,7 +35,7 @@ const EditUser = (props) => {
   // Load data from server and reinitialize user form
   useEffect(() => {
     axios
-      .get(configData.SERVER_URL + id)
+      .get(configData.API_BASE_URL + "/users/" + id)
       .then((res) => {
         console.log(res);
         const { id, nume, prenume, email } = res.data["data"];
