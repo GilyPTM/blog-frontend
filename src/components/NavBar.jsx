@@ -6,7 +6,7 @@ import logo from "../images/logo-blog.png";
 export default function NavBar() {
   const { authenticated, logout } = useContext(AuthContext);
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-success">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-black">
       <div className="container">
         <img src={logo} width={50} height={50} alt="" />
         <a className="navbar-brand ps-2" href="/">
